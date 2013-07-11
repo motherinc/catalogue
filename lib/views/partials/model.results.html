@@ -1,0 +1,36 @@
+
+<br/><br/>
+
+<table id="model-docs-table" width="100%" data-resizable-columns-id="{{ model }}-table">
+   <thead>
+      <tr>
+         {% for field in fields %}
+            <th data-resizable-column-id="{{ field.name }}">{{ field.name }}</th>
+         {% endfor %}
+      </tr>
+   </thead>
+
+   <tbody>
+      {% for row in data %}
+         <tr data-id="{{ row._id }}">
+            {% for field in fields %}
+               <td>
+                  {% if field.ref %}
+                     {% if field.populated %}
+                        <a href="/model/{{ field.ref|url_encode }}/document/{{ row|jsonpath(field.name)|jsonpath('_id') }}">
+                           {{ row|jsonpath(field.name)|json_encode }}
+                        </a>
+                     {% else %}
+                        <a href="/model/{{ field.ref|url_encode }}/document/{{ row|jsonpath(field.name) }}">
+                           {{ row|jsonpath(field.name) }}
+                        </a>
+                     {% endif %}
+                  {% else %}
+                      {{ row|jsonpath(field.name) }}
+                  {% endif %}
+               </td>
+            {% endfor %}
+         </tr>
+      {% endfor %}
+   </tbody>
+</table>

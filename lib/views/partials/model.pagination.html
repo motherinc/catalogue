@@ -1,0 +1,14 @@
+
+{% if skip!=0 %}
+   <a class="model-results-btn" href="/carbon/catalogue/{{ model }}?{{ qs }}{% if qs %}&{% endif %}skip={{ skip|add(nlimit) }}">&larr;</a>
+{% endif %}
+
+&nbsp;
+
+<span id="model-results-numbers">{{ skip|add(1) }} to {{ skip|add(length) }} of {{ count }} results</span>
+
+&nbsp;
+
+{% if length == limit %}
+   <a class="model-results-btn" href="/carbon/catalogue/{{ model }}?{{ qs }}{% if qs %}&{% endif %}skip={{ skip|add(limit) }}">&rarr;</a>
+{% endif %}

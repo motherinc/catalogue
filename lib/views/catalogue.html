@@ -1,0 +1,9 @@
+<div id="home-container">
+   <div class="catalogue-title">Catalogue</div>
+
+   <div class="nav">
+      {% for model in models %}
+         <a href="/model/{{ model|url_encode }}">{{ model }}</a><br/>
+      {% endfor %}
+   </div>
+</div>

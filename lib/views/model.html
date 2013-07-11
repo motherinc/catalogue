@@ -1,0 +1,34 @@
+{% for template in templates %}
+   <script type="text/javascript" src="/api/template/{{ template }}"></script>
+{%- endfor %}
+
+{% for script in scripts %}
+   <script type="text/javascript" src="{{ script }}"></script>
+{%- endfor %}
+
+<input id="_model" type="hidden" value="{{ model }}"/>
+
+<div id="model-container">
+
+   <a class="catalogue-title-small" href="/">Catalogue</a>
+   <span class="model-title">/ {{ model }}</span>
+
+   <br/><br/><br/>
+   
+   <span id="model-options">
+      <a href="#" id="filter">Filter</a>
+      <a href="#" id="select">Select</a>
+      <a href="#" id="sort">Sort</a>
+      <a href="#" id="limit">Limit</a>
+      <a href="#" id="populate">Populate</a>
+   </span>
+
+   <span id="model-pagination"></span>
+
+   <br/>
+
+   <div id="results-container">
+      Loading...
+   </div>
+
+</div>
