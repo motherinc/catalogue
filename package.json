@@ -4,6 +4,7 @@
   "author"       : "Ajay <ajay@mother.co>, Steven <steven@mother.co>",
   "version"      : "0.0.1",
   "private"      : "true",
+  "main"         : "./lib/index",
   "keywords": [
     "mother",
     "catalogue",
