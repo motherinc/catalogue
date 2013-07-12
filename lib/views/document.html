@@ -13,7 +13,10 @@
 <input id="_id" type="hidden" value="{{ _id }}">
 
 <a href="/model/{{ model|url_encode }}">&lt; {{ model|title }}</a>
-<input id="save" type="button" value="Save"/><br/>
+<input id="save" type="button" value="Save"/>
+{% if edit %} <input id="delete" type="button" value="Delete"/> {% endif %}
+
+<br/><br/>
 
 <textarea id="doc">
    {{ docString }}
