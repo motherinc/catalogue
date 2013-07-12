@@ -5,9 +5,15 @@ Catalogue by Mother
 
 #### Why?
 
-- So there's a table view available when looking at multiple documents!
-- To be able to see mongoose ref fields and populate them
-- So we don't have to look at something that looks like shit
+We wanted to build a database client that:
+
+- Has a table view to give us a holistic view of any given collection
+- Has options to filter, sort, and select data
+- Leverage mongoose schemas, validation, hooks, middleware
+- Has easy navigation based on mongoose field references to other collections
+- Integrated well with our workflow
+- Is nice to use
+- Is free and open source
 
 #### TODO
 
