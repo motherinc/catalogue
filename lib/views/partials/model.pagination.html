@@ -1,6 +1,6 @@
 
 {% if skip!=0 %}
-   <a class="model-results-btn" href="/carbon/catalogue/{{ model }}?{{ qs }}{% if qs %}&{% endif %}skip={{ skip|add(nlimit) }}">&larr;</a>
+   <a class="model-results-btn" href="/model/{{ model }}?{{ qs }}{% if qs %}&{% endif %}skip={{ skip|add(nlimit) }}">&larr;</a>
 {% endif %}
 
 &nbsp;
@@ -10,5 +10,5 @@
 &nbsp;
 
 {% if length == limit %}
-   <a class="model-results-btn" href="/carbon/catalogue/{{ model }}?{{ qs }}{% if qs %}&{% endif %}skip={{ skip|add(limit) }}">&rarr;</a>
+   <a class="model-results-btn" href="/model/{{ model }}?{{ qs }}{% if qs %}&{% endif %}skip={{ skip|add(limit) }}">&rarr;</a>
 {% endif %}

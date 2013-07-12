@@ -20,6 +20,5 @@ We wanted to build a database client that:
 - Styling!
 - Add tests
 - Add examples
-- Adding of documents
 - Nicer formatting of populated fields
 - And lots more
