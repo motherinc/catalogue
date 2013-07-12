@@ -8,7 +8,7 @@ Catalogue by Mother
 We wanted to build a database client that:
 
 - Has a table view to give us a holistic view of any given collection
-- Has options to filter, sort, and select data
+- Has options to filter, sort, select, and populate data when viewing a collection
 - Leverage mongoose schemas, validation, hooks, middleware
 - Has easy navigation based on mongoose field references to other collections
 - Integrated well with our workflow
@@ -17,6 +17,7 @@ We wanted to build a database client that:
 
 #### TODO
 
+- Styling!
 - Add tests
 - Add examples
 - Adding of documents
