@@ -24,6 +24,7 @@
     "underscore"      : "1.4.4",
     "xtend"           : "1.0.3"
   },
+  "devDependencies": {
     "less"            : "1.3.3",
     "recess"          : "1.1.9",
     "watchr"          : "2.3.3",
