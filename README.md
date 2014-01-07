@@ -62,3 +62,4 @@ Long Term Tasks
 - Better JSON validation
 - Use local storage instead of storing query parameters in browser address bar
 - Add ability to pass in (authentication) middleware
+- Add additional views (such as document-based)
