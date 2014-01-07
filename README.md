@@ -43,6 +43,7 @@ Short Term Tasks
 - Lots of cleaning
 - Add support for LESS
 - Holistic Styling
+- Improve navigation
 - Improve CodeMirror styling & experience
 - Create grunt task for LESS compilation
 - Create grunt task for client combination & minification
@@ -63,3 +64,4 @@ Long Term Tasks
 - Use local storage instead of storing query parameters in browser address bar
 - Add ability to pass in (authentication) middleware
 - Add additional views (such as document-based)
+- Add optional SSL support
