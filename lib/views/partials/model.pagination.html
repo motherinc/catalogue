@@ -1,14 +1,14 @@
 
 {% if skip!=0 %}
-   <a class="model-results-btn" href="/model/{{ model }}?{{ qs }}{% if qs %}&{% endif %}skip={{ skip|add(nlimit) }}">&larr;</a>
+   <a class="model-results-btn" href="/model/{{ model }}?{{ qs }}{% if qs %}&{% endif %}skip={{ skip+nlimit }}">&larr;</a>
 {% endif %}
 
 &nbsp;
 
-<span id="model-results-numbers">{{ skip|add(1) }} to {{ skip|add(length) }} of {{ count }} results</span>
+<span id="model-results-numbers">{{ skip+1 }} to {{ skip+length }} of {{ count }} results</span>
 
 &nbsp;
 
-{% if length == limit %}
-   <a class="model-results-btn" href="/model/{{ model }}?{{ qs }}{% if qs %}&{% endif %}skip={{ skip|add(limit) }}">&rarr;</a>
+{% if length==limit %}
+   <a class="model-results-btn" href="/model/{{ model }}?{{ qs }}{% if qs %}&{% endif %}skip={{ skip+limit }}">&rarr;</a>
 {% endif %}

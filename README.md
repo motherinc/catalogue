@@ -15,10 +15,50 @@ We wanted to build a database client that:
 - Is nice to use
 - Is free and open source
 
+#### How to use
+
+Just pass your mongoose instance in, and this library will run a server
+on the specified port (4444 by default) that you can access using your web browser.
+
+````
+var catalogue = require('catalogue'),
+    mongoose  = require('mongoose');
+
+var mongooseConnection = mongoose.connect( options.host );
+
+// mongoose configuration...
+
+catalogue({ 
+   port : 1234,
+   connection : mongooseConnection,
+});
+````
+
+##### Do not use in production!
+
 #### TODO
 
-- Styling!
-- Add tests
-- Add examples
-- Nicer formatting of populated fields
-- And lots more
+Short Term Tasks
+
+- Lots of cleaning
+- Add support for LESS
+- Holistic Styling
+- Improve CodeMirror styling & experience
+- Create grunt task for LESS compilation
+- Create grunt task for client combination & minification
+- Better error handling (server-side)
+- Better error handling (client-side)
+- Cleanup & modularize client files
+- Rewrite prompt plugin
+- Figure out how to display populated objects in a table
+- Format dates
+- Make no-cache header only applicable to API calls
+- Better documentation & examples
+- Write tests
+
+Long Term Tasks
+
+- Figure out how to display arrays and subdocs in a table
+- Better JSON validation
+- Use local storage instead of storing query parameters in browser address bar
+- Add ability to pass in (authentication) middleware
