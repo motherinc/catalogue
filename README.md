@@ -47,9 +47,11 @@ Short Term Tasks
 - Improve CodeMirror styling & experience
 - Create grunt task for LESS compilation
 - Create grunt task for client combination & minification
+- Create grunt task for template pre-compilation
 - Better error handling (server-side)
 - Better error handling (client-side)
 - Cleanup & modularize client files
+- Separate API & app logic
 - Rewrite prompt plugin
 - Figure out how to display populated objects in a table
 - Format dates
