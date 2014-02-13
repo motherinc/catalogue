@@ -17,8 +17,8 @@ We wanted to build a database client that:
 
 #### How to use
 
-Just pass your mongoose instance in, and this library will run a server
-on the specified port (4444 by default) that you can access using your web browser.
+Just pass your mongoose connection instance in, and this library will run a server
+on the specified port, which you can then access using your web browser.
 
 ````
 var catalogue = require('catalogue'),
@@ -29,25 +29,27 @@ var mongooseConnection = mongoose.connect( options.host );
 // mongoose configuration...
 
 catalogue({ 
-   port : 1234,
-   connection : mongooseConnection,
+   port: 1234,
+   connection: mongooseConnection,
 });
 ````
 
-##### Do not use in production!
+#### Careful
+- Do not use in production!
+- Careful performing operations that do not use indexes
 
-#### TODO
+#### To Do
 
 Short Term Tasks
 
 - Lots of cleaning
-- Add support for LESS
+- ~~Add support for LESS~~
 - Holistic Styling
 - Improve navigation
 - Improve CodeMirror styling & experience
-- Create grunt task for LESS compilation
+- ~~Create gulp task for LESS compilation~~
 - Create grunt task for client combination & minification
-- Create grunt task for template pre-compilation
+- ~~Create gulp task for template pre-compilation~~
 - Better error handling (server-side)
 - Better error handling (client-side)
 - Cleanup & modularize client files
@@ -57,6 +59,7 @@ Short Term Tasks
 - Format dates
 - Make no-cache header only applicable to API calls
 - Better documentation & examples
+- Add documentation re: SSL setup
 - Write tests
 
 Long Term Tasks
@@ -66,4 +69,3 @@ Long Term Tasks
 - Use local storage instead of storing query parameters in browser address bar
 - Add ability to pass in (authentication) middleware
 - Add additional views (such as document-based)
-- Add optional SSL support
