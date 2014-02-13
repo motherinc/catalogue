@@ -26,8 +26,7 @@
   "devDependencies": {
     "chai": "*",
     "mocha": "*",
-    "gulp": "~3.2.4",
-    "gulp-less": "~1.1.1",
-    "gulp-swig": "~0.1.0"
+    "gulp": "~3.5.0",
+    "gulp-less": "~1.2.0"
   }
 }

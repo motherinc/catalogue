@@ -1,45 +1,45 @@
 
 var gulp = require('gulp'),
     less = require('gulp-less'),
-    swig = require('gulp-swig'),
     path = require('path');
 
 //---------------------------------------------------------
-// # Constants
+// Constants
 //---------------------------------------------------------
 
-var BUILD_DIR = './lib/build';
+var BUILD_DIR = './build';
 
 //---------------------------------------------------------
-// # Production Tasks
+// Clean
+//---------------------------------------------------------
+
+gulp.task('clean', function() {
+  return gulp.src('public', { read: false })
+    .pipe(clean());
+});
+
+//---------------------------------------------------------
+// LESS Task
 //---------------------------------------------------------
 
 gulp.task('less', function() {
-  gulp.src('lib/less/*.less')
-    .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ]
-    }))
+  var options = { paths: [ path.join(__dirname, 'lib', 'less') ] };
+  return gulp.src('lib/less/**/*.less')
+    .pipe(less(options))
     .pipe(gulp.dest(BUILD_DIR + '/css'));
 });
 
-// gulp.task('swig', function() {
-//   gulp.src('lib/views/partials/*.html')
-//     .pipe(swig())
-//     .pipe(gulp.dest(BUILD_DIR + '/views/partials'))
-// });
+//------------------------------------------------
+// Rerun the task when an asset file changes
+//------------------------------------------------
 
-
-// The default task (called when you run `gulp`)
-gulp.task('default', function() {
-  gulp.run('less');
+gulp.task('watch-assets', function () {
+   gulp.watch('lib/less/**/*.less', ['less']);
 });
 
-//---------------------------------------------------------
-// # Development Tasks
-//---------------------------------------------------------
+//------------------------------------------------
+// Main Entrypoints
+//------------------------------------------------
 
-gulp.task('watch-less', function() {
-  gulp.watch('lib/less/*.less', function() {
-    gulp.run('less');
-  });
-});
+gulp.task('default', ['less', 'watch-assets']);
+gulp.task('build', ['less']);
