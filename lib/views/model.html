@@ -10,30 +10,34 @@
 
 <div id="model-container">
 
-   <a class="catalogue-title-small" href="/">Catalogue</a>
-   <span class="model-title">/ {{ model }}</span>
-
-   <br/><br/><br/>
-   
-   <span id="model-options">
-      <a href="#" id="filter">Filter</a>
-      <a href="#" id="select">Select</a>
-      <a href="#" id="sort">Sort</a>
-      <a href="#" id="limit">Limit</a>
-      <a href="#" id="populate">Populate</a>
-   </span>
+   <div id="nav">
+      <a class="catalogue-title-small" href="/">Catalogue</a>
+      <span class="model-title">/ {{ model }}</span>
+      
+      
 
 
-   <span style="float:right;padding-right:20px;">
-      <a href="/model/{{ model }}/document/new">+</a>
-   </span>
+      
 
-   <span id="model-pagination"></span>
+      
+   </div>
 
-   <br/>
+
 
    <div id="results-container">
       ...
    </div>
+   
+   <div id="footer">
+      <span id="model-pagination"></span>
+      <span id="model-options">
+         <a href="#" id="filter">Filter</a>
+         <a href="#" id="select">Select</a>
+         <a href="#" id="sort">Sort</a>
+         <a href="#" id="limit">Limit</a>
+         <a href="#" id="populate">Populate</a>
+      </span>
 
+      <a href="/model/{{ model }}/document/new" class="btn-add">+</a>
+   </div>
 </div>
