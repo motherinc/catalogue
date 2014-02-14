@@ -5,7 +5,7 @@ var gulp    = require('gulp'),
     exec    = require('gulp-exec'),
     ext     = require('gulp-ext-replace'),
     less    = require('gulp-less'),
-    swig    = require('./tmp/gulp-swig-precompiler'),
+    swig    = require('gulp-swig-precompile'),
     uglify  = require('gulp-uglify'),
     wrap    = require('gulp-wrap'),
     path    = require('path');
@@ -42,10 +42,9 @@ gulp.task('less', function() {
    
 gulp.task('templates', function() {
    var base = path.join(__dirname, 'lib/views');
+   var tpl = 'carbon.templates.register("<%= file.relative %>", <%= template %>);'
    return gulp.src('lib/views/partials/**/*.html', { base : base })
-      .pipe(swig({ filters : require('./lib/js/swig.helpers') }))
-      .pipe(ext('.html'))
-      .pipe(wrap('carbon.templates.register("<%= file.relative %>", <%= contents %>);'))
+      .pipe(swig({ output : tpl, filters : require('./lib/js/swig.helpers') }))
       .pipe(concat('templates.js'))
       .pipe(uglify())
       .pipe(gulp.dest(BUILD_DIR + '/js'));
