@@ -17,42 +17,51 @@
    </head>
 
    <body>
-      <div id="viewport"></div>
+
+      <div id="viewport">
+
+      </div>
 
       {% for script in scripts %}
          <script type="text/javascript" src="{{ script }}"></script>
       {%- endfor %}
 
       <script type="text/javascript">
-         
          // Swig Helpers
-
          if( swigHelpers && swig ) {
             for( var h in swigHelpers ) {
                swig.setFilter( h, swigHelpers[h] );
             }
          }
+      </script>
 
-         // Browser Address Bar Logic
+      <script type="text/javascript" src="/build/js/templates.js"></script>
 
-         var addressHasChanged = function(event) {
-            $('#viewport').load( event.value, function(response, status, xhr) {
-               if (status == "error") {
-                  var msg = "Sorry but there was an error: <br/><br/>";
-                  $("#viewport").html(msg + xhr.status + " " + response);
-               }
-            });
-         }
+      <script type="text/javascript">
+         
+         (function() {
 
-         $.address
-            .state('/')
-            .init(function() {
-               $('body').on('click', 'a', function() {  
-                   $.address.value( $(this).attr('href') );  
-                   return false;
+            // Browser Address Bar Logic
+
+            var addressHasChanged = function(event) {
+               $('#viewport').load( event.value, function(response, status, xhr) {
+                  if (status == "error") {
+                     var msg = "Sorry but there was an error: <br/><br/>";
+                     $("#viewport").html(msg + xhr.status + " " + response);
+                  }
                });
-            })
-            .change(addressHasChanged);
+            }
+
+            $.address
+               .state('/')
+               .init(function() {
+                  $('body').on('click', 'a', function() {  
+                      $.address.value( $(this).attr('href') );  
+                      return false;
+                  });
+               })
+               .change(addressHasChanged);
+         })();
       </script>
    </body>
 
