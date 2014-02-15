@@ -2,12 +2,9 @@
 var gulp    = require('gulp'),
     clean   = require('gulp-clean'),
     concat  = require('gulp-concat'),
-    exec    = require('gulp-exec'),
-    ext     = require('gulp-ext-replace'),
     less    = require('gulp-less'),
     swig    = require('gulp-swig-precompile'),
     uglify  = require('gulp-uglify'),
-    wrap    = require('gulp-wrap'),
     path    = require('path');
 
 //---------------------------------------------------------

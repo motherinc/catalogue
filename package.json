@@ -24,18 +24,12 @@
     "xtend": "1.0.3"
   },
   "devDependencies": {
-    "chai": "*",
     "mocha": "*",
     "gulp": "~3.5.0",
     "gulp-less": "~1.2.0",
-    "through2": "~0.4.1",
-    "gulp-util": "~2.2.14",
     "gulp-clean": "~0.2.4",
     "gulp-concat": "~2.1.7",
     "gulp-uglify": "~0.2.1",
-    "gulp-wrap": "~0.3.0",
-    "gulp-exec": "~1.0.4",
-    "gulp-ext-replace": "0.0.5",
     "gulp-swig-precompile": "0.0.2"
   }
 }

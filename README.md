@@ -36,7 +36,8 @@ catalogue({
 
 #### Careful
 - Do not use in production!
-- Careful performing operations that do not use indexes
+- Careful performing operations that do not make use of indexes efficiently
+- Note that updates are non-atomic in order to take advantage of schema hooks
 
 #### To Do
 
