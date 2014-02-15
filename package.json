@@ -21,7 +21,8 @@
     "mongoose": "3.8.3",
     "swig": "1.2.2",
     "underscore": "1.5.2",
-    "xtend": "1.0.3"
+    "xtend": "1.0.3",
+    "flat": "~1.1.0"
   },
   "devDependencies": {
     "mocha": "*",
