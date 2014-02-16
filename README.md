@@ -12,7 +12,7 @@ We wanted to build a database client that:
 - Leverage mongoose schemas, validation, hooks, middleware
 - Has easy navigation based on mongoose field references to other collections
 - Integrated well with our workflow
-- Is nice to use
+- Is easy to setup, awesome to use, and easy to remove
 - Is free and open source
 
 #### How to use
