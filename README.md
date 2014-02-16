@@ -17,21 +17,29 @@ We wanted to build a database client that:
 
 #### How to use
 
-Just pass your mongoose connection instance in, and this library will run a server
+Just pass your mongoose instance in, and this library will run a server
 on the specified port, which you can then access using your web browser.
 
 ````
 var catalogue = require('catalogue'),
     mongoose  = require('mongoose');
 
-var mongooseConnection = mongoose.connect( options.host );
+mongoose.connect( options.host );
+// mongoose configuration...
+
+catalogue(mongoose, { port: 1234 });
+````
+
+If you have multiple connections connected, pass in the desired connection instance instead.
+
+````
+var db1 = mongoose.createConnection('mongodb://user:pass@localhost:port/database');
+var db2 = mongoose.createConnection('mongodb://user:pass@localhost:port/database2');
 
 // mongoose configuration...
 
-catalogue({ 
-   port: 1234,
-   connection: mongooseConnection,
-});
+catalogue(db1, { port: 1234 });
+catalogue(db2, { port: 1235 });
 ````
 
 #### Careful
