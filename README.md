@@ -14,8 +14,9 @@ We wanted to build a database client that:
 - Integrated well with our workflow
 - Is easy to setup, awesome to use, and easy to remove
 - Is free and open source
+- Works offline (TODO: finalize font dependencies and fallbacks)
 
-#### How to use
+#### Usage
 
 Just pass your mongoose instance in, and this library will run a server
 on the specified port, which you can then access using your web browser.
@@ -46,6 +47,7 @@ catalogue(db2, { port: 1235 });
 - Do not use in production!
 - Careful performing operations that do not make use of indexes efficiently
 - Note that updates are non-atomic in order to take advantage of schema hooks
+- Not compatbile with IE <10
 
 #### To Do
 
