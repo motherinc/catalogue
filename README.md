@@ -62,11 +62,10 @@ Short Term Tasks
 
 - Lots of cleaning
 - Holistic Styling
-- Improve navigation
 - Improve CodeMirror styling & experience
 - Better error handling (server-side)
 - Better error handling (client-side)
-- Rewrite prompt plugin
+- Improve entry of filters, select, sort, populate, limit
 - Figure out how to display populated objects in a table
 - Format dates
 - Better documentation & examples
