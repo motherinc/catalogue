@@ -122,7 +122,7 @@ gulp.task('watch-assets', function () {
    gulp.watch('lib/less/**/*.less', ['less']);
    gulp.watch('lib/views/**/*.html', ['templates']);
    gulp.watch('lib/apps/**/*.js', ['scripts']);
-   gulp.watch('lib/apps/index.client.js', ['scripts']);
+   gulp.watch('lib/index.client.js', ['scripts']);
 });
 
 //------------------------------------------------

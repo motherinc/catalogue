@@ -1,9 +1,9 @@
 Catalogue by Mother
 =========
 
-### A Proper Mongoose Based Database Client
+A Proper Mongoose Based Data Viewer
 
-#### Why?
+## Why?
 
 We wanted to build a database client that:
 
@@ -14,9 +14,16 @@ We wanted to build a database client that:
 - Integrated well with our workflow
 - Is easy to setup, awesome to use, and easy to remove
 - Is free and open source
-- Works offline (TODO: finalize font dependencies and fallbacks)
 
-#### Usage
+## Install
+
+Install as a development dependency using npm
+
+````
+npm install --save-dev catalogue
+````
+
+## Usage
 
 Just pass your mongoose instance in, and this library will run a server
 on the specified port, which you can then access using your web browser.
@@ -43,32 +50,25 @@ catalogue(db1, { port: 1234 });
 catalogue(db2, { port: 1235 });
 ````
 
-#### Careful
+## Careful
 - Do not use in production!
 - Careful performing operations that do not make use of indexes efficiently
 - Note that updates are non-atomic in order to take advantage of schema hooks
 - Not compatbile with IE <10
 
-#### To Do
+## To Do
 
 Short Term Tasks
 
 - Lots of cleaning
-- ~~Add support for LESS~~
 - Holistic Styling
 - Improve navigation
 - Improve CodeMirror styling & experience
-- ~~Create gulp task for LESS compilation~~
-- Create grunt task for client combination & minification
-- ~~Create gulp task for template pre-compilation~~
 - Better error handling (server-side)
 - Better error handling (client-side)
-- Cleanup & modularize client files
-- Separate API & app logic
 - Rewrite prompt plugin
 - Figure out how to display populated objects in a table
 - Format dates
-- Make no-cache header only applicable to API calls
 - Better documentation & examples
 - Add documentation re: SSL setup
 - Write tests
@@ -77,6 +77,5 @@ Long Term Tasks
 
 - Figure out how to display arrays and subdocs in a table
 - Better JSON validation
-- Use local storage instead of storing query parameters in browser address bar
 - Add ability to pass in (authentication) middleware
-- Add additional views (such as document-based)
+- Add additional model views (such as document-based)
