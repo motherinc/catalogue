@@ -26,6 +26,12 @@ var browserifyShims = {
       exports: null
    },
 
+   'jquery-serialize' : {
+      path: __dirname + '/lib/plugins/jquery.serialize.js',
+      depends: { jquery: '$' },
+      exports: null
+   },
+
    // Code Mirror
    'codemirror' : {
       path: __dirname + '/lib/plugins/codemirror/lib/codemirror.js',
@@ -107,8 +113,8 @@ gulp.task('templates', function() {
    var base = path.join(__dirname, 'lib/views'),
        tpl = 'exports["<%= file.relative %>"]=<%= template %>;';
    
-   return gulp.src('lib/views/**/*.html', { base : base })
-      .pipe(swig({ output : tpl, filters : require('./lib/plugins/swig.helpers') }))
+   return gulp.src('lib/views/**/*.html', { base: base })
+      .pipe(swig({ output: tpl, filters: require('./lib/plugins/swig.helpers') }))
       .pipe(concat('templates.js'))
       .pipe(uglify())
       .pipe(gulp.dest(BUILD_DIR + '/js'));
@@ -120,7 +126,7 @@ gulp.task('templates', function() {
 
 gulp.task('watch-assets', function () {
    gulp.watch('lib/less/**/*.less', ['less']);
-   gulp.watch('lib/views/**/*.html', ['templates']);
+   gulp.watch('lib/views/**/*.html', ['scripts']);
    gulp.watch('lib/apps/**/*.js', ['scripts']);
    gulp.watch('lib/index.client.js', ['scripts']);
 });

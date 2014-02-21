@@ -70,6 +70,7 @@ Short Term Tasks
 - Format dates
 - Better documentation & examples
 - Add documentation re: SSL setup
+- Browser compatability check
 - Write tests
 
 Long Term Tasks

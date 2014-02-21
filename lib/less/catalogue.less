@@ -179,26 +179,38 @@ td {
 //-----------------------------------------------------------------
 
 .modal-overlay {
-	position:absolute;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
-	z-index:9999999;
-	display:none;
-	cursor:pointer;
-}
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	display: none;
 
-.modal-overlay .modal-window {
-	position:absolute;
-	background:white;
-	-webkit-border-radius:4px;
-	-moz-border-radius:4px;
-	border-radius:4px;
-	-webkit-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-	-moz-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-	-ms-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-	box-shadow:0 10px 25px rgba(0,0,0,0.1);
+	.modal-window {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 1050;
+		background: #f8f8f8;
+	}
+
+	.modal-titlebar {
+		float: left;
+		width: 100%;
+		background: #fcfcfc;
+		border-bottom: 1px solid #eee;
+
+		.title { float: left; padding: 18px 30px; }
+		.actions { float: right; margin: 18px 6px;  }
+	}
+
+	.modal-actions {
+		float: right;
+		margin-top: 12px;
+		margin-right: 30px;
+		margin-bottom: 30px;
+	}
 }
 
 #model-prompt {
