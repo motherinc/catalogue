@@ -1,35 +1,43 @@
-<table id="model-docs-table" width="100%" data-resizable-columns-id="{{ model }}-table">
+<table id="model-docs-table" width="100%">
    <thead>
       <tr>
          {% for field in fields %}
-            <th data-resizable-column-id="{{ field.name }}">{{ field.name }}</th>
+            <th>{{ field.name }}</th>
          {% endfor %}
       </tr>
    </thead>
 
    <tbody>
-      {% for row in documents %}
-         <tr data-id="{{ row._id }}">
-            {% for field in fields %}
-               <td>
-                  <div class="cell-wrap">
-                  {% if field.ref %}
-                     {% if field.populated %}
-                        <a href="/model/{{ field.ref|url_encode }}/document/{{ row|jsonpath(field.name)|jsonpath('_id') }}">
-                           {{ row|jsonpath(field.name)|json_encode }}
-                        </a>
+      {% if documents.length %}
+         {% for row in documents %}
+            <tr data-id="{{ row._id }}">
+               {% for field in fields %}
+                  <td>
+                     <div class="cell-wrap">
+                     {% if field.ref %}
+                        {% if field.populated %}
+                           <a href="/model/{{ field.ref|url_encode }}/document/{{ row|jsonpath(field.name)|jsonpath('_id') }}">
+                              {{ row|jsonpath(field.name)|json_encode }}
+                           </a>
+                        {% else %}
+                           <a href="/model/{{ field.ref|url_encode }}/document/{{ row|jsonpath(field.name) }}">
+                              {{ row|jsonpath(field.name) }}
+                           </a>
+                        {% endif %}
                      {% else %}
-                        <a href="/model/{{ field.ref|url_encode }}/document/{{ row|jsonpath(field.name) }}">
-                           {{ row|jsonpath(field.name) }}
-                        </a>
+                         {{ row|jsonpath(field.name) }}
                      {% endif %}
-                  {% else %}
-                      {{ row|jsonpath(field.name) }}
-                  {% endif %}
-                  </div>
-               </td>
-            {% endfor %}
+                     </div>
+                  </td>
+               {% endfor %}
+            </tr>
+         {% endfor %}
+      {% else %}
+         <tr>
+            <td colspan="{{ fields.length }}">
+               No results found
+            </td>
          </tr>
-      {% endfor %}
+      {% endif %}
    </tbody>
 </table>

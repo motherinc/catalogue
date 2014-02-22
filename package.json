@@ -1,6 +1,6 @@
 {
   "name": "catalogue",
-  "description": "A Proper Mongoose Based Database Client",
+  "description": "A Mongoose Based Database Client",
   "author": "Ajay <ajay@mother.co>, Steven <steven@mother.co>",
   "version": "0.0.2",
   "private": "true",
