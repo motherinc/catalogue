@@ -32,10 +32,12 @@ on the specified port, which you can then access using your web browser.
 var catalogue = require('catalogue'),
     mongoose  = require('mongoose');
 
-mongoose.connect( options.host );
+mongoose.connect(options.host);
 // mongoose configuration...
 
-catalogue(mongoose, { port: 1234 });
+if (process.env.NODE_ENV == 'development') {
+   catalogue(mongoose, { port: 1234 });
+}
 ````
 
 If you have multiple connections connected, pass in the desired connection instance instead.
@@ -46,8 +48,10 @@ var db2 = mongoose.createConnection('mongodb://user:pass@localhost:port/database
 
 // mongoose configuration...
 
-catalogue(db1, { port: 1234 });
-catalogue(db2, { port: 1235 });
+if (process.env.NODE_ENV == 'development') {
+   catalogue(db1, { port: 1234 });
+   catalogue(db2, { port: 1235 });
+}
 ````
 
 ## Careful

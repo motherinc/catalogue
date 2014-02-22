@@ -12,7 +12,11 @@
    </div>
    
    <div id="footer">
-      <span id="model-pagination"></span>
+      <span id="model-pagination">
+         <a style="display:none;">&larr;</a>
+         <span id="model-results-label"></span>
+         <a style="display:none;">&rarr;</a>
+      </span>
       <span id="model-options">
          <a id="filter">Options</a>
     <!--      <a id="select">Select</a>
@@ -44,9 +48,6 @@
                      <td>
                         <textarea name="filter" width="100%"></textarea>
                      </td>
-                     <td>
-                        <input type="checkbox"> Remember
-                     </td>
                   </tr>
                   
                   <!-- Select -->
@@ -57,9 +58,6 @@
                      <td>
                         <input name="select" type="text">
                      </td>
-                     <td>
-                        <input type="checkbox"> Remember
-                     </td>
                   </tr>
 
                   <!-- Sort -->
@@ -69,9 +67,6 @@
                      </td>
                      <td>
                         <input name="sort" type="text">
-                     </td>
-                     <td>
-                        <input type="checkbox"> Remember
                      </td>
                   </tr>
 
@@ -88,9 +83,6 @@
                            <option value="100">100</option>
                         </select>
                      </td>
-                     <td>
-                        <input type="checkbox"> Remember
-                     </td>
                   </tr>
 
                   <!-- Populate -->
@@ -100,9 +92,6 @@
                      </td>
                      <td>
                         <textarea name="populate" width="100%"></textarea>
-                     </td>
-                     <td>
-                        <input type="checkbox"> Remember
                      </td>
                   </tr>
 
