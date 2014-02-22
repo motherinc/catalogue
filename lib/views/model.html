@@ -2,10 +2,9 @@
 <div id="model-container">
 
    <div id="header">
-      <a class="catalogue-title-small show-overlay">
+      <a id="show-overlay" class="catalogue-title-small">
          <img src="/assets/images/logo.png" class="logo">
       </a>
-      <!-- <span class="model-title">/ {{ model }}</span> --> 
    </div>
 
    <div id="results-container">
@@ -15,25 +14,25 @@
    <div id="footer">
       <span id="model-pagination"></span>
       <span id="model-options">
-         <a id="filter">Filter</a>
-         <a id="select">Select</a>
+         <a id="filter">Options</a>
+    <!--      <a id="select">Select</a>
          <a id="sort">Sort</a>
          <a id="limit">Limit</a>
-         <a id="populate">Populate</a>
+         <a id="populate">Populate</a> -->
       </span>
 
       <a href="/model/{{ model }}/document/new" class="btn-add">+</a>
    </div>
    
    <div id="options-modal" class="modal-overlay">
-      <div class="modal-window" style="width: 600px;margin-top: -210px; margin-left: -300px; border: 6px solid #ccc;">
+      <div class="modal-window">
          <div class="modal-titlebar">
-         <div class="title"><h1>Options</h1></div>
+         <div class="title">Options</div>
             <div class="actions">
                <a id="close-modal" class="ui btn first margin-right">Close</a>
             </div>
          </div>
-         <div style="padding:100px;">
+         <div class="modal-padding">
             <form id="model-options-form">
                <table width="100%">
 
@@ -84,6 +83,7 @@
                      <td>
                         <select name="limit" width="100%">
                            <option value="10">10</option>
+                           <option value="10">25</option>
                            <option value="50">50</option>
                            <option value="100">100</option>
                         </select>

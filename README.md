@@ -1,7 +1,7 @@
 Catalogue by Mother
 =========
 
-A Proper Mongoose Based Data Viewer
+A Mongoose Based Data Viewer
 
 ## Why?
 
