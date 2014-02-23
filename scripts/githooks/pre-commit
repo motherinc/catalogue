@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# A pre-commit hook for git to lint JavaScript files with jshint
-# @see https://github.com/jshint/jshint/
-
 if git rev-parse --verify HEAD >/dev/null 2>&1
 then
     against=HEAD
@@ -11,27 +8,39 @@ else
     against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
 fi
 
-REPO=$(pwd)
-JSHINT_HOME=${REPO}/node_modules/.bin
-EXIT_CODE=0
-for FILE in `git diff-index --name-only ${against} -- | egrep *.js`; do
-    cd ${JSHINT_HOME}
-    
-    # with jsc:
-    # env/ddc-jsc.sh ${REPO}/${FILE}
-    
-    # could similarly wrap Rhino or Node...
-    echo jshint ${REPO}/${FILE} --config=scripts/config.hint.js
-    
-    EXIT_CODE=$((${EXIT_CODE} + $?))
-done
+function failCommit() {
+    tput setaf 1
+    echo "----------------------------------------"
+    echo "FATAL ERROR: $1"
+    echo "----------------------------------------"
+    tput sgr0
+    exit 1
+}
 
-if [[ ${EXIT_CODE} -ne 0 ]]; then
-    echo ""
-    echo "JSHint detected syntax problems."
-    echo "Commit aborted."
-else
-    echo "JSHint Passed"
+function testFail() {
+    tput setaf 3
+    echo "----------------------------------------"
+    echo "$1"
+    echo "----------------------------------------"
+    tput sgr0
+}
+
+echo 'Running JSHint...'
+
+REPO=$(pwd)
+JSHINT=${REPO}/node_modules/.bin/jshint
+
+FILES=$(find . -name '*.js' ! -path "./node_modules/*" ! -path "./build/*" ! -path "./lib/plugins*" ! -path "./scripts*")
+RESULT=$(${JSHINT} ${FILES} --config=${REPO}/.jshintrc)
+
+if egrep "errors" <<< "$RESULT"; then
+    num=$(grep "[0-9]+ error" <<< "$RESULT")
+    testFail "JSHint: $num"
+    echo "$RESULT"
+    echo ''
+    hintFailed=1
 fi
 
-exit $((${EXIT_CODE}))
+if [[ $hintFailed -gt 0 ]]; then
+    failCommit "Hint Errors"
+fi
