@@ -21,7 +21,7 @@ for FILE in `git diff-index --name-only ${against} -- | egrep *.js`; do
     # env/ddc-jsc.sh ${REPO}/${FILE}
     
     # could similarly wrap Rhino or Node...
-    jshint ${REPO}/${FILE} --config=scripts/config.hint.js
+    echo jshint ${REPO}/${FILE} --config=scripts/config.hint.js
     
     EXIT_CODE=$((${EXIT_CODE} + $?))
 done
