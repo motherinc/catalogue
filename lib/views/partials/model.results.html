@@ -1,4 +1,4 @@
-<table id="model-docs-table" width="100%">
+<table id="model-docs-table" class="model-table"  width="100%">
    <thead>
       <tr>
          {% for field in fields %}
@@ -21,10 +21,12 @@
                         {% if field.populated %}
                            <a href="/model/{{ field.ref|url_encode }}/document/{{ row|jsonpath(field.name)|jsonpath('_id') }}">
                               {{ row|jsonpath(field.name)|json_encode }}
+                              <img src="/assets/images/icon-add.png" class="icon">
                            </a>
                         {% else %}
                            <a href="/model/{{ field.ref|url_encode }}/document/{{ row|jsonpath(field.name) }}">
                               {{ row|jsonpath(field.name) }}
+                              <img src="/assets/images/icon-go.png" class="icon">
                            </a>
                         {% endif %}
                      {% else %}

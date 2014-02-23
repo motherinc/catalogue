@@ -1,14 +1,26 @@
-<style>
-   .CodeMirror {
-      width: 100%;
-      height: 100%;
-   }
-</style>
+<div id="header">
+   <a id="show-overlay" class="catalogue-title-small">
+      <img src="/assets/images/logo.png" class="logo">
+   </a>
+   <div class="menu-icon">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+   </div>
+</div>
 
-<a href="/model/{{ model|url_encode }}">&lt; {{ model|title }}</a>
-<input id="save" type="button" value="Save"/>
-<input id="delete" type="button" value="Delete"/>
+<div id="subheader">
+	<a href="/model/{{ model|url_encode }}" class="title">
+      <img src="/assets/images/icon-back.png" class="icon">
+      {{ model|title }}
+   </a>
+	<div class="actions">
+      <input id="save" type="button" class="btn" value="Save"/>
+      <input id="delete" type="button" class="btn" value="Delete"/>  
+   </div>
+</div>
 
-<br/><br/>
-
-<textarea id="doc"></textarea>
+<div id="document-view">
+	<textarea id="doc"></textarea>
+</div>
+   

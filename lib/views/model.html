@@ -1,11 +1,12 @@
-
 <div id="model-container">
 
    <div id="header">
-      <a class="catalogue-title-small show-overlay">
-         <img src="/assets/images/logo.png" class="logo">
-      </a>
-      <!-- <span class="model-title">/ {{ model }}</span> --> 
+      <img src="/assets/images/logo.png" class="logo">
+      <div class="menu-icon">
+         <div class="line"></div>
+         <div class="line"></div>
+         <div class="line"></div>
+      </div>
    </div>
 
    <div id="results-container">
@@ -13,98 +14,103 @@
    </div>
    
    <div id="footer">
+      <a href="/model/{{ model }}/document/new" class="btn-add">
+         <img src="/assets/images/icon-add.png" class="icon">
+      </a>
+
       <span id="model-pagination">
-         <a style="display:none;">&larr;</a>
+         <a class="btn-arrow">&larr;</a>
          <span id="model-results-label"></span>
-         <a style="display:none;">&rarr;</a>
+         <a class="btn-arrow">&rarr;</a>
       </span>
       <span id="model-options">
-         <a id="filter">Filter</a>
-         <a id="select">Select</a>
-         <a id="sort">Sort</a>
-         <a id="limit">Limit</a>
-         <a id="populate">Populate</a>
+         <a id="filter">Options</a>
       </span>
 
-      <a href="/model/{{ model }}/document/new" class="btn-add">+</a>
    </div>
    
    <div id="options-modal" class="modal-overlay">
-      <div class="modal-window" style="width: 600px;margin-top: -210px; margin-left: -300px; border: 6px solid #ccc;">
+      <div class="modal-window">
+         <form id="model-options-form">
          <div class="modal-titlebar">
-         <div class="title"><h1>Options</h1></div>
+         <div class="title">Options</div>
             <div class="actions">
-               <a id="close-modal" class="ui btn first margin-right">Close</a>
+               <a id="close-modal" class="ui btn first margin-right">
+                  <img src="/assets/images/icon-close.png" class="icon">
+               </a>
             </div>
          </div>
-         <div style="padding:100px;">
-            <form id="model-options-form">
-               <table width="100%">
+         <div class="modal-container">
+            <div class="modal-padding">
+               
+                  <table width="100%">
 
-                  <!-- Filter -->
-                  <tr>
-                     <td width="20%">
-                        <div class="label">Filter</div>
-                     </td>
-                     <td>
-                        <textarea name="filter" width="100%"></textarea>
-                     </td>
-                  </tr>
-                  
-                  <!-- Select -->
-                  <tr>
-                     <td width="20%">
-                        <div class="label">Select</div>
-                     </td>
-                     <td>
-                        <input name="select" type="text">
-                     </td>
-                  </tr>
+                     <!-- Filter -->
+                     <tr>
+                        <td width="90px">
+                           <div class="label">Filter</div>
+                        </td>
+                        <td>
+                           <textarea name="filter" width="100%"></textarea>
+                        </td>
+                     </tr>
+                     
+                     <!-- Select -->
+                     <tr>
+                        <td>
+                           <div class="label">Select</div>
+                        </td>
+                        <td>
+                           <input name="select" type="text">
+                        </td>
+                     </tr>
 
-                  <!-- Sort -->
-                  <tr>
-                     <td width="20%">
-                        <div class="label">Sort</div>
-                     </td>
-                     <td>
-                        <input name="sort" type="text">
-                     </td>
-                  </tr>
+                     <!-- Sort -->
+                     <tr>
+                        <td>
+                           <div class="label">Sort</div>
+                        </td>
+                        <td>
+                           <input name="sort" type="text">
+                        </td>
+                     </tr>
 
-                  <!-- Limit -->
-                  <tr>
-                     <td width="20%">
-                        <div class="label">Limit</div>
-                     </td>
-                     <td>
-                        <select name="limit" width="100%">
-                           <option value="10">10</option>
-                           <option value="50">50</option>
-                           <option value="100">100</option>
-                        </select>
-                     </td>
-                  </tr>
+                     <!-- Limit -->
+                     <tr>
+                        <td>
+                           <div class="label">Limit</div>
+                        </td>
+                        <td>
+                           <select name="limit" width="100%">
+                              <option value="10">10</option>
+                              <option value="25">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                           </select>
+                        </td>
+                     </tr>
 
-                  <!-- Populate -->
-                  <tr>
-                     <td width="20%">
-                        <div class="label">Populate</div>
-                     </td>
-                     <td>
-                        <textarea name="populate" width="100%"></textarea>
-                     </td>
-                  </tr>
+                     <!-- Populate -->
+                     <tr>
+                        <td>
+                           <div class="label">Populate</div>
+                        </td>
+                        <td>
+                           <textarea name="populate" width="100%"></textarea>
+                        </td>
+                     </tr>
 
-                  <tr>
-                     <td colspan="2">
-                        <input type="submit" value="Submit">
-                     </td>
-                  </tr>
-
-               </table>
-            </form>
+                  </table>
+              
+            </div>
          </div>
+         
+         <div class="modal-toolbar">
+            <input type="submit" value="Save" class="btn-submit">
+         </div>
+
       </div>
+       </form>
    </div>
 
 </div>
