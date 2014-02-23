@@ -10,9 +10,14 @@
 </div>
 
 <div id="subheader">
-	<a href="/model/{{ model|url_encode }}">&lt; {{ model|title }}</a>
-	<input id="save" type="button" value="Save"/>
-	<input id="delete" type="button" value="Delete"/>
+	<a href="/model/{{ model|url_encode }}" class="title">
+      <img src="/assets/images/icon-back.png" class="icon">
+      {{ model|title }}
+   </a>
+	<div class="actions">
+      <input id="save" type="button" class="btn" value="Save"/>
+      <input id="delete" type="button" class="btn" value="Delete"/>  
+   </div>
 </div>
 
 <div id="document-view">

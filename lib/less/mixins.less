@@ -1,0 +1,30 @@
+//-----------------------------------------------------------------
+// Mixins
+//-----------------------------------------------------------------
+
+.opacity(@opacity) {
+   opacity: @opacity / 100;
+   filter: ~"alpha(opacity=@{opacity})";
+}
+
+.box-shadow(@outset) {
+   -webkit-box-shadow: @outset;
+   -moz-box-shadow: @outset;
+   -ms-box-shadow: @outset;
+   box-shadow: @outset;
+}
+
+.vertical-gradient(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+ background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); 
+ background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); 
+ background-repeat: repeat-x;
+ filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color)));
+}
+
+.transition(@timing) {
+   -webkit-transition: @timing;
+   -moz-transition: @timing;
+   -o-transition: @timing;
+   -ms-transition: @timing;
+   transition: @timing;
+}

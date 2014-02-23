@@ -1,7 +1,11 @@
-Catalogue by Mother
+Catalogue
 =========
 
+<<<<<<< HEAD
 A Mongoose Based Data Viewer
+=======
+A Mongoose Based Data Viewer (Work In Progress)
+>>>>>>> 68c2ecaf75c5e0865f4c29b8179e1c8fe9ca4fcc
 
 ## Why?
 
@@ -60,26 +64,16 @@ if (process.env.NODE_ENV == 'development') {
 - Note that updates are non-atomic in order to take advantage of schema hooks
 - Not compatbile with IE <10
 
-## To Do
+## Roadmap
 
-Short Term Tasks
-
-- Lots of cleaning
-- Holistic Styling
-- Improve CodeMirror styling & experience
-- Better error handling (server-side)
-- Better error handling (client-side)
-- Improve entry of filters, select, sort, populate, limit
-- Figure out how to display populated objects in a table
-- Format dates
-- Better documentation & examples
-- Add documentation re: SSL setup
-- Browser compatability check
 - Write tests
-
-Long Term Tasks
-
-- Figure out how to display arrays and subdocs in a table
-- Better JSON validation
-- Add ability to pass in (authentication) middleware
+- Documentation
+- Code cleaning
+- Improve overall experience
+- Improve document editing & viewing experience
+- Better error handling
+- Improved entry of filters, select, sort, populate, limit
+- Improved display populated objects in a table
+- Improved date formatting
+- Display arrays and subdocs in table view
 - Add additional model views (such as document-based)
