@@ -3,17 +3,13 @@ Catalogue
 
 A Mongoose Based Data Viewer (Work In Progress)
 
-## Why?
+## Features
 
-We wanted to build a database client that:
-
-- Has a table view to give us a holistic view of any given collection
-- Has options to filter, sort, select, and populate data when viewing a collection
-- Leverage mongoose schemas, validation, hooks, middleware
-- Has easy navigation based on mongoose field references to other collections
-- Integrated well with our workflow
-- Is easy to setup, awesome to use, and easy to remove
-- Is free and open source
+- Table view to give a holistic view of any given collection
+- Options to filter, sort, select, and populate data when viewing a collection
+- Leverages mongoose schemas, validation, hooks, middleware when adding and updating documents
+- Ability to follow references to other documents
+- Easy to setup
 
 ## Install
 
@@ -54,7 +50,7 @@ if (process.env.NODE_ENV == 'development') {
 }
 ````
 
-## Careful
+## Notes
 - Do not use in production!
 - Careful performing operations that do not make use of indexes efficiently
 - Note that updates are non-atomic in order to take advantage of schema hooks
