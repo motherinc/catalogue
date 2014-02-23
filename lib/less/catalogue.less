@@ -2,10 +2,14 @@
 // Constants
 //-----------------------------------------------------------------
 
-@header-height: 120px;
-@footer-height: 48px;
-@primary-font: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
-@secondary-font: 'Verdana','PT Mono';
+@header-height 		: 120px;
+@subheader-height 	: 60px;
+@footer-height    	: 48px;
+
+@header-background-color: #32393d;
+
+@primary-font  		: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+@secondary-font 		: 'Verdana','PT Mono';
 
 //-----------------------------------------------------------------
 // Imports
@@ -41,14 +45,12 @@ a {
 	left: 0;
 	right: 0;
 	height: @header-height;
-	background: #343D4C;
-	background: #32393d;
+	background: @header-background-color;
 	text-align: center;
 	.transition(400ms);
 	cursor: pointer;
 
 	.logo {
-		//display: none;
 		float: left;
 		height: 42px;
 		margin: 18px 12px;
@@ -114,7 +116,7 @@ a {
 #results-container {
 	position: fixed;
 	top: @header-height;
-	left: 0px;
+	left: 0;
 	right: 0;
 	bottom: @footer-height;
 	overflow: auto;
@@ -122,7 +124,7 @@ a {
 
 #document-view {
 	position: fixed;
-	top: @header-height + 60;
+	top: @header-height + @subheader-height;
 	left: 0;
 	right: 0;
 	bottom: @footer-height;
@@ -134,8 +136,8 @@ a {
 	top: @header-height;
 	left: 0px;
 	right: 0;
-	height: 60px;
-	line-height: 60px;
+	height: @subheader-height;
+	line-height: @subheader-height;
 	background: #eee;
 
 	.title { 
@@ -162,7 +164,7 @@ a {
 
 	.btn {
 		float: left;
-		height: 60px;
+		height: @subheader-height;
 		padding: 0 30px;
 		margin: 0;
 		border: none;
@@ -196,7 +198,7 @@ a {
 	th {
 		text-align: left;
 		color: #99B5B2;
-		background: #32393d;
+		background: @header-background-color;
 		border-left: 1px solid #444;
 		padding: 0 12px 12px 12px;
 		text-transform: uppercase;
@@ -229,7 +231,6 @@ a {
 		}
 	}
 
-
 	td {
 		font-family: @secondary-font;
 		border-right: 1px solid #eee;
@@ -248,7 +249,7 @@ a {
 	height: 18px;
 	line-height: 18px;
 	overflow: hidden;
-	text-overflow:ellipsis;
+	text-overflow: ellipsis;
 
    a {
 	  	float: left;
@@ -313,7 +314,6 @@ a {
 
 	.btn-add {
 		float: left;
-		font-size: 15px;
 
 		.icon {
 			float: left;
@@ -323,7 +323,7 @@ a {
 		}
 	}
 
-	#model-options {
+	#view-options {
 		float: right;
 	}
 }
@@ -471,14 +471,18 @@ a {
 	}
 }
 
+//-----------------------------------------------------------------
+// Prompt
+//-----------------------------------------------------------------
+
 #model-prompt {
 	padding: 24px;
 
 	textarea {
-		width:600px;
-		height:150px;
-		padding:12px;
-		font-size:20px;
-		border:1px solid #474747;
+		width: 600px;
+		height: 150px;
+		padding: 12px;
+		font-size: 20px;
+		border: 1px solid #474747;
 	}
 }
