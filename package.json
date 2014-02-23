@@ -1,15 +1,19 @@
 {
   "name": "catalogue",
-  "description": "A Mongoose Based Database Client",
-  "author": "Ajay <ajay@mother.co>, Steven <steven@mother.co>",
-  "version": "0.0.2",
-  "private": "true",
+  "description": "A Mongoose Based Data Viewer",
+  "author": "Mother Inc <ajay@mother.co>",
+  "version": "0.0.3",
   "main": "./lib/index.server",
+    "engines": {
+    "node": ">=0.10.0"
+  },
   "keywords": [
     "mother",
     "catalogue",
     "mongoose",
-    "mongodb"
+    "mongodb",
+    "database",
+    "admin"
   ],
   "repository": {
     "type": "git",

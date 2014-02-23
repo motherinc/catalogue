@@ -29,6 +29,8 @@
                               <img src="/assets/images/icon-go.png" class="icon">
                            </a>
                         {% endif %}
+                     {% elseif field.type=="Date" %}
+                        {{ row|jsonpath(field.name)|date('Y-m-d H:i:s') }}
                      {% else %}
                          {{ row|jsonpath(field.name) }}
                      {% endif %}
