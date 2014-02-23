@@ -36,6 +36,8 @@
     "gulp-uglify": "~0.2.1",
     "gulp-swig-precompile": "0.0.4",
     "gulp-browserify": "0.4.3",
-    "browserify-shim": "~3.2.2"
+    "browserify-shim": "~3.2.2",
+    "gulp-exec": "~1.0.4",
+    "jshint": "~2.4.4"
   }
 }

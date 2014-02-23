@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# A pre-commit hook for git to lint JavaScript files with jshint
+# @see https://github.com/jshint/jshint/
+
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+    against=HEAD
+else
+    # Initial commit: diff against an empty tree object
+    against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+fi
+
+REPO=$(pwd)
+JSHINT_HOME=${REPO}/node_modules/.bin
+EXIT_CODE=0
+for FILE in `git diff-index --name-only ${against} -- | egrep *.js`; do
+    cd ${JSHINT_HOME}
+    
+    # with jsc:
+    # env/ddc-jsc.sh ${REPO}/${FILE}
+    
+    # could similarly wrap Rhino or Node...
+    jshint ${FILE}
+    
+    EXIT_CODE=$((${EXIT_CODE} + $?))
+done
+
+if [[ ${EXIT_CODE} -ne 0 ]]; then
+    echo ""
+    echo "JSHint detected syntax problems."
+    echo "Commit aborted."
+fi
+
+exit $((${EXIT_CODE}))

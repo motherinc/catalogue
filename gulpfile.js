@@ -2,6 +2,7 @@
 var gulp = require('gulp'),
     clean = require('gulp-clean'),
     concat = require('gulp-concat'),
+    exec = require('gulp-exec'),
     less = require('gulp-less'),
     swig = require('gulp-swig-precompile'),
     uglify = require('gulp-uglify'),
@@ -68,9 +69,19 @@ var browserifyShims = {
 // Clean
 //---------------------------------------------------------
 
-gulp.task('clean', function() {
+gulp.task('clean', ['githooks'], function() {
    return gulp.src(BUILD_DIR, { read: false })
       .pipe(clean());
+});
+
+//---------------------------------------------------------
+// Copy Git Hook
+//---------------------------------------------------------
+
+gulp.task('githooks', function() {
+   return gulp.src('scripts/githooks/*')
+      .pipe(gulp.dest('.git/hooks/'))
+      .pipe(exec('chmod +x <%= file.path %>'));
 });
 
 //---------------------------------------------------------
@@ -135,5 +146,5 @@ gulp.task('watch-assets', function () {
 // Main Entrypoints
 //------------------------------------------------
 
-gulp.task('build', ['less', 'templates', 'scripts']);
+gulp.task('build', ['githooks', 'less', 'templates', 'scripts']);
 gulp.task('default', ['build', 'watch-assets']);
