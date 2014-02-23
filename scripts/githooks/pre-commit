@@ -1,14 +1,5 @@
 #!/bin/sh
 
-function failCommit() {
-    tput setaf 1
-    echo "----------------------------------------"
-    echo "FATAL ERROR: $1"
-    echo "----------------------------------------"
-    tput sgr0
-    exit 1
-}
-
 # A pre-commit hook for git to lint JavaScript files with jshint
 # @see https://github.com/jshint/jshint/
 
@@ -30,12 +21,10 @@ for FILE in `git diff-index --name-only ${against} -- | egrep *.js`; do
     # env/ddc-jsc.sh ${REPO}/${FILE}
     
     # could similarly wrap Rhino or Node...
-    jshint ${REPO}/${FILE}
+    jshint ${REPO}/${FILE} --config=scripts/config.hint.js
     
     EXIT_CODE=$((${EXIT_CODE} + $?))
 done
-
-failCommit "Unable To Commit"
 
 if [[ ${EXIT_CODE} -ne 0 ]]; then
     echo ""
