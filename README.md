@@ -1,11 +1,7 @@
 Catalogue
 =========
 
-<<<<<<< HEAD
-A Mongoose Based Data Viewer
-=======
 A Mongoose Based Data Viewer (Work In Progress)
->>>>>>> 68c2ecaf75c5e0865f4c29b8179e1c8fe9ca4fcc
 
 ## Features
 
