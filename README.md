@@ -73,6 +73,7 @@ if (process.env.NODE_ENV == 'development') {
 - Improved date formatting
 - Display arrays, subdocs, and mixed fields in table view
 - Add additional model views (such as document-based)
+- Add discrimnator support
 
 ## License
 
