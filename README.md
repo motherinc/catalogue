@@ -11,7 +11,7 @@ A Mongoose Based Data Viewer (Work In Progress)
 
 - Table view to give a holistic view of any given collection
 - Options to filter, sort, select, and populate data when viewing a collection
-- Leverages mongoose schemas, validation, hooks, middleware when adding and updating documents
+- Leverages mongoose schemas, validation, hooks, middleware when adding, updating and removing documents
 - Ability to follow references to other documents
 - Easy to setup
 
@@ -74,6 +74,7 @@ if (process.env.NODE_ENV == 'development') {
 - Display arrays, subdocs, and mixed fields in table view
 - Add additional model views (such as document-based)
 - Add discrimnator support
+- Add option to bypass mongoose hooks
 
 ## License
 
