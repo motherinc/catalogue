@@ -4,7 +4,7 @@
   "author": "Mother Inc <ajay@mother.co>",
   "version": "0.0.3",
   "main": "./lib/index.server",
-    "engines": {
+  "engines": {
     "node": ">=0.10.0"
   },
   "keywords": [
@@ -22,14 +22,14 @@
   "dependencies": {
     "async": "0.2.9",
     "express": "3.4.7",
-    "mongoose": "3.8.3",
     "swig": "~1.3.2",
     "underscore": "~1.5.2",
     "xtend": "1.0.3",
     "flat": "~1.1.0",
     "ms": "~0.6.2",
     "jquery": "~2.1.0",
-    "page": "~1.3.7"
+    "page": "~1.3.7",
+    "mongoose": "~3.8.25"
   },
   "devDependencies": {
     "mocha": "*",
