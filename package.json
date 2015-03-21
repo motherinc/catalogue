@@ -2,7 +2,7 @@
   "name": "catalogue",
   "description": "A Mongoose Based Data Viewer",
   "author": "Mother Inc <ajay@mother.co>",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./lib/index.server",
   "engines": {
     "node": ">=0.10.0"
